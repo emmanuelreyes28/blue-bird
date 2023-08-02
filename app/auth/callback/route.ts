@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
 
     if(code){
         // use createRouteHandlerClient since this is a route
-        const supabase = createRouteHandlerClient({ cookies })
+        const supabase = createRouteHandlerClient<Database>({ cookies })
         // authenticate user on next.js app and set a cookie meaning they are now signed in
         await supabase.auth.exchangeCodeForSession(code)
     }
