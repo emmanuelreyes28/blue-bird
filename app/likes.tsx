@@ -3,10 +3,10 @@
 import { createClientComponentClient } from "@supabase/auth-helpers-nextjs";
 import { useRouter } from "next/navigation";
 
-export default function Likes({ tweet }) {
+export default function Likes({ tweet }: { tweet: TweetWithAuthor }) {
   const router = useRouter();
   const handleLikes = async () => {
-    const supabase = createClientComponentClient();
+    const supabase = createClientComponentClient<Database>();
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -25,7 +25,7 @@ export default function Likes({ tweet }) {
           .insert({ user_id: user?.id, tweet_id: tweet.id });
       }
 
-      router.refresh(); // refresh page to show update like count
+      router.refresh(); // refresh page to show updated like count
     }
   };
   return <button onClick={handleLikes}>{tweet.likes} Likes</button>;
