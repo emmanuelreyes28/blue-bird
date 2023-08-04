@@ -21,7 +21,8 @@ export default async function Home() {
   const { data } = await supabase
     .from("tweets")
     // author is used as an alias for profiles
-    .select("*, author: profiles(*), likes(user_id)"); // we are able to grab these cols bc there is a relationship btwn them
+    .select("*, author: profiles(*), likes(user_id)") // we are able to grab these cols bc there is a relationship btwn them
+    .order("created_at", { ascending: false }); // show tweets in descending order
 
   const tweets =
     data?.map((tweet) => ({
@@ -35,10 +36,13 @@ export default async function Home() {
     })) ?? [];
 
   return (
-    <>
-      <AuthButtonServer />
-      <NewTweet />
+    <div className="w-full max-w-xl mx-auto">
+      <div className="flex justify-between px-4 py-6 border border-gray-800 border-t-0">
+        <h1 className="text-xl font-bold">Home</h1>
+        <AuthButtonServer />
+      </div>
+      <NewTweet user={session.user} />
       <Tweets tweets={tweets} />
-    </>
+    </div>
   );
 }
