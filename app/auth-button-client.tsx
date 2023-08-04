@@ -20,7 +20,7 @@ export default function AuthButtonClient({
       provider: "github",
       // once auth flow has been completed the user will be redirected
       options: {
-        redirectTo: "http://localhost:3000/auth/callback",
+        redirectTo: `${location.origin}/auth/callback`,
       },
     });
   };

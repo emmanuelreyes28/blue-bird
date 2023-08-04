@@ -3,8 +3,9 @@ import { cookies } from "next/headers";
 import AuthButtonServer from "./auth-button-server";
 import { redirect } from "next/navigation";
 import NewTweet from "./new-tweet";
-import Likes from "./likes";
 import Tweets from "./tweets";
+
+export const dynamic = "force-dynamic";
 
 export default async function Home() {
   const supabase = createServerComponentClient<Database>({ cookies });
@@ -29,7 +30,7 @@ export default async function Home() {
       ...tweet,
       // if tweet author is an array then only grab first author othwerwise get tweet.author
       author: Array.isArray(tweet.author) ? tweet.author[0] : tweet.author,
-      user_has_liked_tweet: tweet.likes.find(
+      user_has_liked_tweet: !!tweet.likes.find(
         (like) => like.user_id === session.user.id
       ),
       likes: tweet.likes.length,
