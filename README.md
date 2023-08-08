@@ -23,6 +23,6 @@ I used React/Next.js, TypeScript, Tailwind CSS, PostgreSQL and Supabase.
 
 ## Visit Blue Bird
 
-Visit [The Pre-Workout Insider](https://blue-bird-iota.vercel.app/)
+Visit [Blue Bird](https://blue-bird-iota.vercel.app/)
 
 Thank you for stopping by! 😁
