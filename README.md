@@ -1,34 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Blue Bird
 
-## Getting Started
+A mininum viable product (mvp) clone of X, formerly known as Twitter. Users can easily sign-in with their GitHub or LinkedIn account. Once signed-in, users can post tweets and like other users' posts.
 
-First, run the development server:
+## How It Was Built
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+I used React/Next.js, TypeScript, Tailwind CSS, PostgreSQL and Supabase.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## What I Learned
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- TypeScript
+- Cookie-based Auth
+- Authorization with Row-Level Security (RLS)
+- Fetching and Mutating Data
+- Realtime subscriptions
+- Postgres Trigger Functions
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## How Can I Make It Better?
 
-## Learn More
+- Add retweet and comment features
+- Account page where users can edit their profile information
+- Ability to follow other users for a more tailored timeline
 
-To learn more about Next.js, take a look at the following resources:
+## Visit Blue Bird
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Visit [The Pre-Workout Insider](https://blue-bird-iota.vercel.app/)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Thank you for stopping by! 😁
