@@ -8,6 +8,9 @@ const nextConfig = {
       {
         hostname: "avatars.githubusercontent.com",
       },
+      {
+        hostname: "media.licdn.com",
+      },
     ],
   },
 };

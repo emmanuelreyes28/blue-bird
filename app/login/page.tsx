@@ -2,6 +2,7 @@ import { createServerComponentClient } from "@supabase/auth-helpers-nextjs";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import GitHubButton from "./github-button";
+import LinkedInButton from "./linkedin-button";
 
 export const dynamic = "force-dynamic";
 
@@ -21,8 +22,11 @@ export default async function Login() {
   return (
     <div className="flex-1 flex flex-col justify-center items-center">
       <div className="text-2xl">Blue Bird</div>
-      <GitHubButton />
-      <span>Log in with GitHub</span>
+      <div className="text-xl">Log In</div>
+      <div className="flex space-x-4">
+        <GitHubButton />
+        <LinkedInButton />
+      </div>
     </div>
   );
 }
